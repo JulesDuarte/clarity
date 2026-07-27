@@ -930,3 +930,14 @@ td.c-clarity,td.c-std{white-space:nowrap}
 /* the design's review arrows follow the same rule: gone when nothing to scroll */
 .carousel-btns.is-hidden{display:none}
 .thumb-next.is-hidden{display:none}
+
+/* ============ Language switch ============ */
+.lang-switch{display:inline-flex;align-items:center;gap:5px;font-size:14px;letter-spacing:.02em}
+.lang-switch a{color:var(--meta);opacity:1}
+.lang-switch a:hover{color:var(--blue)}
+.lang-switch a.is-active{color:var(--ink);font-weight:600}
+.lang-sep{color:var(--line)}
+@media (max-width:560px){
+  .nav-right{gap:14px;font-size:14px}
+  .lang-switch{gap:4px;font-size:13px}
+}
