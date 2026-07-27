@@ -535,7 +535,7 @@ td.c-clarity,td.c-std{white-space:nowrap}
 /* ============ Marketplace page ============ */
 /* Hero */
 .mkhero{position:relative;overflow:hidden;background:#dcebfc url("assets/market/hero-bg.png") center/cover no-repeat}
-.mkhero-img{position:absolute;right:0;top:0;height:100%;width:44%;object-fit:cover;object-position:center top}
+.mkhero-img{position:absolute;right:0;top:0;height:100%;width:40%;object-fit:cover;object-position:center 28%}
 .mkhero-inner{position:relative;max-width:var(--container);margin:0 auto;padding:52px 40px 60px}
 .hero-trust{display:flex;align-items:center;gap:12px;margin-bottom:30px;font-size:14px;color:var(--muted);flex-wrap:wrap}
 .avatars{display:inline-flex}
@@ -551,7 +551,7 @@ td.c-clarity,td.c-std{white-space:nowrap}
 .hero-checks li{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--ink)}
 .chk-o{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--ink);position:relative;flex:none}
 .chk-o::after{content:"";position:absolute;left:7px;top:4px;width:5px;height:9px;border:solid var(--ink);border-width:0 1.7px 1.7px 0;transform:rotate(45deg)}
-@media(min-width:901px){.mkhero-inner{padding-right:46%}}
+@media(min-width:901px){.mkhero{min-height:760px}.mkhero-inner{padding-right:43%}}
 
 /* Products toolbar + coming-soon card */
 .prod-toolbar{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:8px 0 34px;flex-wrap:wrap}
@@ -642,7 +642,7 @@ td.c-clarity,td.c-std{white-space:nowrap}
 
 /* Marketplace responsive */
 @media(max-width:900px){
-  .mkhero-img{position:static;width:100%;height:420px;object-position:center 22%}
+  .mkhero-img{position:static;width:100%;height:460px;object-position:center 40%}
   .mkhero-inner{padding:36px 24px 44px}
   .bundle{grid-template-columns:1fr}
   .bundle-media{height:300px}
@@ -821,7 +821,7 @@ td.c-clarity,td.c-std{white-space:nowrap}
   .lede,.split-body,.support-copy{font-size:17px}
 
   /* --- Home hero: a shorter image so the headline is nearer the top --- */
-  .mkhero-img{height:320px}
+  .mkhero-img{height:440px}
   .hero-trust{font-size:13px;gap:10px}
 
   /* --- Product gallery thumbs must scroll, not spill --- */
@@ -941,3 +941,4 @@ td.c-clarity,td.c-std{white-space:nowrap}
   .nav-right{gap:14px;font-size:14px}
   .lang-switch{gap:4px;font-size:13px}
 }
+.nav-left a{white-space:nowrap}
