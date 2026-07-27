@@ -783,3 +783,86 @@ td.c-clarity,td.c-std{white-space:nowrap}
   .contact-media{height:340px}
   .contact-form-wrap{padding:44px 24px 64px}
 }
+
+/* ============ Mobile refinements ============ */
+.nav-toggle{display:none}
+
+@media (max-width:820px){
+  /* --- Mobile navigation --- */
+  .header-inner{grid-template-columns:auto 1fr auto}
+  .nav-toggle{
+    display:flex;flex-direction:column;justify-content:center;gap:5px;
+    width:40px;height:40px;margin-left:-8px;padding:0 8px;
+    background:none;border:none;cursor:pointer;
+  }
+  .nav-toggle span{display:block;height:1.8px;width:22px;background:var(--ink);border-radius:2px;transition:.2s}
+  .site-header.nav-open .nav-toggle span:nth-child(1){transform:translateY(6.8px) rotate(45deg)}
+  .site-header.nav-open .nav-toggle span:nth-child(2){opacity:0}
+  .site-header.nav-open .nav-toggle span:nth-child(3){transform:translateY(-6.8px) rotate(-45deg)}
+  .brand{grid-column:2;justify-self:center}
+  .nav-right{grid-column:3}
+
+  .nav-left{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;
+    background:var(--pale);border-bottom:1px solid var(--line);
+    padding:6px 24px 16px;box-shadow:0 12px 24px rgba(0,0,0,.06);
+  }
+  .site-header.nav-open .nav-left{display:flex}
+  .nav-left a{padding:13px 0;font-size:17px;border-bottom:1px solid rgba(66,98,211,.1)}
+  .nav-left a:last-child{border-bottom:none}
+
+  /* --- Type scale: the desktop minimums are too large on a phone --- */
+  .display{font-size:32px}
+  .display-sm{font-size:27px}
+  .mkhero .display{font-size:32px}
+  .hero .display{font-size:32px}
+  .product-title{font-size:29px}
+  .lede,.split-body,.support-copy{font-size:17px}
+
+  /* --- Home hero: a shorter image so the headline is nearer the top --- */
+  .mkhero-img{height:320px}
+  .hero-trust{font-size:13px;gap:10px}
+
+  /* --- Product gallery thumbs must scroll, not spill --- */
+  .gallery-thumbs{overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+  .thumb{width:72px;height:72px}
+  .thumb-next{display:none}
+}
+
+@media (max-width:560px){
+  .display{font-size:29px}
+  .display-sm{font-size:25px}
+  .mkhero .display,.hero .display{font-size:29px}
+  .section,.container{padding-left:20px;padding-right:20px}
+  .feature-title{font-size:19px}
+  .feature-body,.purpose-list p{font-size:16px}
+  .purpose-list h3{font-size:19px}
+  .rev-num,.rev-pct{font-size:34px}
+  .bundle-panel,.appsec-text{padding-left:20px;padding-right:20px}
+}
+
+@media (max-width:560px){
+  .hero-btns{flex-direction:column;gap:10px}
+  .hero-btns .btn{width:100%}
+  .routine-head .btn,.prod-toolbar .btn{width:100%}
+}
+
+@media (max-width:900px){
+  /* grid children must be allowed to shrink below their min-content, or the
+     nowrap price rows push the bundle card wider than its parent */
+  .bundle-media,.bundle-panel{min-width:0}
+  .page-home .bundle{max-width:calc(100% - 40px)}
+  .page-home .bundle-panel{padding:36px 20px}
+  .page-home .bundle-box{padding:20px 16px}
+  .brow{gap:10px}
+  .brow p{max-width:none}
+  .bundle-top h3{font-size:18px}
+}
+@media (max-width:560px){
+  /* the coming-soon pill was wider than the card it sits on */
+  .prod-soon-label{
+    font-size:12px;padding:8px 12px;white-space:normal;text-align:center;
+    max-width:calc(100% - 20px);line-height:1.3;
+  }
+}
