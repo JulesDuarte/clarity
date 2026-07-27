@@ -891,3 +891,42 @@ td.c-clarity,td.c-std{white-space:nowrap}
 }
 .table-hint{display:none}
 @media (max-width:820px){.table-hint{display:flex}}
+
+/* ============ Carousels ============ */
+.crsl{
+  display:flex;gap:24px;align-items:stretch;
+  /* smoothness is driven from JS; a CSS scroll-behavior here swallows
+     programmatic scrolls, leaving the arrows dead */
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;-ms-overflow-style:none;
+  /* bleed to the screen edges on small screens so cards can peek */
+  padding-bottom:4px;
+}
+.crsl::-webkit-scrollbar{display:none}
+.crsl > *{scroll-snap-align:start;flex:0 0 auto;min-width:0}
+
+.crsl-nav{display:flex;justify-content:flex-end;gap:10px;margin-bottom:18px}
+.crsl-nav.is-hidden{display:none}
+.cbtn:disabled{opacity:.35;cursor:default}
+.cbtn:not(:disabled):hover{background:var(--blue);color:#fff}
+
+/* item widths per row type */
+.prod-grid.crsl > *{flex:0 0 calc((100% - 72px)/4)}
+.vid-grid.crsl > *{flex:0 0 calc((100% - 72px)/4)}
+.pharma-reviews.crsl > *{flex:0 0 calc((100% - 48px)/3)}
+
+@media (max-width:900px){
+  .prod-grid.crsl,.vid-grid.crsl{gap:16px}
+  .prod-grid.crsl > *,.vid-grid.crsl > *{flex:0 0 calc((100% - 16px)/2)}
+  .pharma-reviews.crsl{gap:16px}
+  .pharma-reviews.crsl > *{flex:0 0 82%}
+}
+@media (max-width:560px){
+  /* a peek of the next card signals the row scrolls */
+  .prod-grid.crsl > *,.vid-grid.crsl > *{flex:0 0 68%}
+  .pharma-reviews.crsl > *{flex:0 0 88%}
+  .crsl-nav{display:none}
+}
+/* the design's review arrows follow the same rule: gone when nothing to scroll */
+.carousel-btns.is-hidden{display:none}
+.thumb-next.is-hidden{display:none}
